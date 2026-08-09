@@ -4,7 +4,7 @@ using Forms = System.Windows.Forms;
 
 namespace SoundDesk;
 
-public partial class App : Application
+public partial class App : System.Windows.Application
 {
     private Forms.NotifyIcon? _trayIcon;
     private MainWindow? _window;

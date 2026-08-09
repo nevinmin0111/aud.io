@@ -10,9 +10,9 @@ internal static class DefaultDeviceService
         var policy = (IPolicyConfig)new PolicyConfigClient();
         try
         {
-            policy.SetDefaultEndpoint(deviceId, ERole.Console);
-            policy.SetDefaultEndpoint(deviceId, ERole.Multimedia);
-            policy.SetDefaultEndpoint(deviceId, ERole.Communications);
+            policy.SetDefaultEndpoint(deviceId, Role.Console);
+            policy.SetDefaultEndpoint(deviceId, Role.Multimedia);
+            policy.SetDefaultEndpoint(deviceId, Role.Communications);
         }
         finally
         {
@@ -36,7 +36,7 @@ internal static class DefaultDeviceService
         int SetShareMode([MarshalAs(UnmanagedType.LPWStr)] string deviceId, IntPtr mode);
         int GetPropertyValue([MarshalAs(UnmanagedType.LPWStr)] string deviceId, IntPtr key, IntPtr value);
         int SetPropertyValue([MarshalAs(UnmanagedType.LPWStr)] string deviceId, IntPtr key, IntPtr value);
-        int SetDefaultEndpoint([MarshalAs(UnmanagedType.LPWStr)] string deviceId, ERole role);
+        int SetDefaultEndpoint([MarshalAs(UnmanagedType.LPWStr)] string deviceId, Role role);
         int SetEndpointVisibility([MarshalAs(UnmanagedType.LPWStr)] string deviceId, int visible);
     }
 }
